@@ -1,4 +1,4 @@
-// Homepage and simulated assistant. Requires shared.js from onboarding starter.
+// Homepage and simulated assistant. Requires shared.js from onboarding.
 (() => {
   const profile = CHIP.getProfile();
   if (!profile) { location.replace("onboarding/index.html"); return; }
