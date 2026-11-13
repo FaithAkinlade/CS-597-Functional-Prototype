@@ -14,7 +14,7 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 | Study Spaces | Find and filter campus study locations and view their details. | AN |
 | Schedule & Checklist | Manage schedules and create, edit, and complete checklist items. | CF |
 | Campus Directions | Select campus locations and view directions between buildings. | YD |
-| Free Time | Identify available time slots based on the student's schedule. | TBD |
+| Free Time | Identify available time slots based on the student's schedule. | TBD (Optional) |
 
 ## Technologies
 
