@@ -1,0 +1,41 @@
+/* CHIP shared design system — import on every page. */
+:root {
+  --primary-color: #8c2030;
+  --primary-hover: #701827;
+  --background-color: #f8f8fa;
+  --card-color: #fff;
+  --text-color: #222222;
+  --secondary-text: #62636b;
+  --border-color: #dedee4;
+  --accent-color: #f2e0e3;
+  --border-radius: 16px;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --page-width: 480px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-color); color: var(--text-color); font-family: var(--font-family); line-height: 1.5; }
+h1,h2,h3,p { margin: 0 0 12px; }
+a { color: var(--primary-color); }
+button,input,select,textarea { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 3px; }
+.app-shell { max-width: var(--page-width); min-height: 100vh; margin: auto; background: var(--background-color); }
+.app-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; background: var(--card-color); border-bottom: 1px solid var(--border-color); }
+.brand { font-size: 24px; font-weight: 800; color: var(--primary-color); text-decoration: none; letter-spacing: .04em; }
+.page-content { padding: 24px; }
+.card { background: var(--card-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px; }
+.muted { color: var(--secondary-text); }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 20px; border: 1px solid transparent; border-radius: 12px; font-weight: 650; text-decoration: none; }
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-secondary { background: white; color: var(--primary-color); border-color: var(--border-color); }
+.btn-block { width: 100%; }
+.field { display: grid; gap: 8px; margin-bottom: 20px; }
+.field label { font-weight: 650; }
+.field input,.field select,.field textarea { width: 100%; padding: 12px; min-height: 48px; border: 1px solid var(--border-color); border-radius: 10px; background: white; color: var(--text-color); }
+.error { color: var(--primary-color); font-size: .875rem; }
+.feature-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.feature-card { display: block; text-decoration: none; color: var(--text-color); }
+.feature-card:hover { border-color: var(--primary-color); }
+.bottom-nav { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 8px; padding: 16px; background: white; border-top: 1px solid var(--border-color); }
+.bottom-nav a { font-size: .8rem; text-decoration: none; }

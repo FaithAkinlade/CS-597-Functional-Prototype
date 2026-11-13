@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to CHIP</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="onboarding.css">
+  <script src="../shared.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header"><span class="brand">CHIP</span></header>
+    <main class="page-content onboarding">
+      <div class="mascot" aria-hidden="true">
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <circle cx="50" cy="50" r="46" fill="#f2e0e3"/>
+          <path d="M50 29V14" stroke="#8c2030" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="50" cy="13" r="4" fill="#8c2030"/>
+          <rect x="17" y="29" width="66" height="49" rx="18" fill="#8c2030"/>
+          <rect x="25" y="37" width="50" height="32" rx="12" fill="white"/>
+          <circle cx="39" cy="49" r="4" fill="#8c2030"/>
+          <circle cx="61" cy="49" r="4" fill="#8c2030"/>
+          <path d="M43 57Q50 64 57 57" fill="none" stroke="#8c2030" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <section class="intro">
+        <p class="eyebrow">YOUR CAMPUS ASSISTANT</p>
+        <h1 id="heading">Hi! I'm CHIP.</h1>
+        <p class="muted" id="intro-text">I'm here to help you find your way, plan your day, and make campus feel like home.</p>
+      </section>
+      <form id="profile-form" class="card">
+        <div class="field">
+          <label for="student-name">What should I call you?</label>
+          <input id="student-name" name="name" placeholder="Enter your preferred name" autocomplete="given-name" maxlength="40" required aria-describedby="name-help error">
+          <small class="muted" id="name-help">I'll use this to personalize your experience.</small>
+          <p id="error" class="error" role="alert" hidden></p>
+        </div>
+        <button id="submit-button" class="btn btn-primary btn-block" type="submit">Get started →</button>
+        <a id="cancel-link" class="cancel" href="../index.html" hidden>Cancel</a>
+      </form>
+      <p class="privacy muted">Your name is saved only in this browser for this prototype.</p>
+    </main>
+  </div>
+</body>
+</html>
