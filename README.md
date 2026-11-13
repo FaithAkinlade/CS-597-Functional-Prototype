@@ -29,7 +29,7 @@ No backend, external API, or database is required. Sample data may be used for f
 ## Proposed Project Structure
 
 ```text
-chip/
+CHIP_main/
 ├── index.html              # Home page and chat interface
 ├── chip.js                 # Assistant response logic
 ├── onboarding/
