@@ -11,7 +11,7 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 | Feature | Description | Owner |
 | --- | --- | --- |
 | Home & CHIP Assistant | Personalized greeting, conversational interface, quick actions, and navigation. | FA |
-| Study Spaces | Find and filter campus study locations and view their details. | TBD |
+| Study Spaces | Find and filter campus study locations and view their details. | AN |
 | Schedule & Checklist | Manage schedules and create, edit, and complete checklist items. | CF |
 | Campus Directions | Select campus locations and view directions between buildings. | YD |
 | Free Time | Identify available time slots based on the student's schedule. | TBD |
@@ -89,10 +89,10 @@ Use a local server rather than opening HTML files directly so that shared browse
 Each team member should develop their feature on a separate Git branch:
 
 - `feature/home-onboarding` (FA)
-- `feature/study-spaces` (TBD)
+- `feature/study-spaces` (AN)
 - `feature/schedule` (CF)
 - `feature/directions` (YD)
-- `feature/free-time` (TBD)
+- `feature/free-time` (TBD - optional)
 
 Before starting, update your local main branch and create your assigned feature branch:
 
@@ -242,7 +242,7 @@ Each team member should document their contributions, the usability feedback add
 | Team member | Feature | Contributions / usability improvements |
 | --- | --- | --- |
 | FA | Home, CHIP Assistant & Onboarding | Personalized greeting, chat, quick actions, profile and shared navigation; usability improvements TBD |
-| TBD | Study Spaces | TBD |
+| AN | Study Spaces | TBD |
 | CF | Schedule & Checklist | TBD |
 | YD | Campus Directions | TBD |
 | TBD | Free Time | TBD |
