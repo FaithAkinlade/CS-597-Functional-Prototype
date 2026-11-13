@@ -58,7 +58,7 @@ chip/
 └── README.md
 ```
 
-FA owns the homepage, assistant, and onboarding, and coordinates shared navigation and styling. CF owns `schedule/` and YD owns `directions/`. Study Spaces and Free Time ownership is still to be confirmed. Each team member is responsible for their assigned feature files. Feature-specific CSS files are optional. All pages should use the shared styles and navigation to maintain a consistent design.
+Note: All pages should use the shared styles and navigation to maintain a consistent design.
 
 ## Getting Started
 
