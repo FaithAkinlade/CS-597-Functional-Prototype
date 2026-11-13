@@ -10,6 +10,7 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 
 | Feature | Description | Owner |
 | --- | --- | --- |
+| Home Page | Central navigation to and from other functions | Faith |
 | Study Spaces | Find and filter campus study locations and view their details. | TBD |
 | Schedule & Checklist | Manage schedules and create, edit, and complete checklist items. | TBD |
 | Campus Directions | Select campus locations and view directions between buildings. | TBD |
@@ -23,7 +24,7 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 - Browser localStorage — shared and persistent prototype data where needed
 - Git and GitHub — version control and collaboration
 
-No backend, external API, or database is required. Sample data may be used for functionality that would normally require external services.
+Note for our reference: No backend, external API, or database is required. Sample data may be used for functionality that would normally require external services.
 
 ## Proposed Project Structure
 
@@ -182,6 +183,7 @@ Each team member should document their contributions, the usability feedback add
 
 | Team member | Feature | Contributions / usability improvements |
 | --- | --- | --- |
+| TBD | Home Page | TBD |
 | TBD | Study Spaces | TBD |
 | TBD | Schedule & Checklist | TBD |
 | TBD | Campus Directions | TBD |
