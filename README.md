@@ -20,7 +20,7 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 
 - HTML — page structure and content
 - CSS — styling and layout
-- Vanilla JavaScript — interactive functionality
+- JavaScript — interactive functionality
 - Browser localStorage — shared and persistent prototype data where needed
 - Git and GitHub — version control and collaboration
 
