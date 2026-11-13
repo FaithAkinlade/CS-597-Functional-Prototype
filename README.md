@@ -11,7 +11,6 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 | Feature | Description | Owner |
 | --- | --- | --- |
 | Home & CHIP Assistant | Personalized greeting, conversational interface, quick actions, and navigation. | FA |
-| Onboarding | Collect and save the student’s preferred name; allow profile updates. | FA |
 | Study Spaces | Find and filter campus study locations and view their details. | TBD |
 | Schedule & Checklist | Manage schedules and create, edit, and complete checklist items. | CF |
 | Campus Directions | Select campus locations and view directions between buildings. | YD |
