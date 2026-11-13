@@ -4,16 +4,17 @@
 
 ## Project Overview
 
-CHIP is a high-fidelity, semi-functional web prototype designed to help international students navigate university life. The application builds on our previous design and usability evaluation, incorporating feedback to improve navigation, usability, and the overall student experience.
+CHIP is a high-fidelity, semi-functional web prototype designed to help international students navigate university life through a personalized, conversational campus assistant. Students can ask CHIP questions, receive simulated context-aware answers, and access campus tools through quick actions. Onboarding collects the student’s preferred name so CHIP can greet them personally. The application builds on our previous design and usability evaluation, incorporating feedback to improve navigation, usability, and the overall student experience.
 
 ## Features
 
 | Feature | Description | Owner |
 | --- | --- | --- |
-| Home Page | Central navigation to and from other functions | Faith |
+| Home & CHIP Assistant | Personalized greeting, conversational interface, quick actions, and navigation. | FA |
+| Onboarding | Collect and save the student’s preferred name; allow profile updates. | FA |
 | Study Spaces | Find and filter campus study locations and view their details. | TBD |
-| Schedule & Checklist | Manage schedules and create, edit, and complete checklist items. | Christopher |
-| Campus Directions | Select campus locations and view directions between buildings. | Yifei |
+| Schedule & Checklist | Manage schedules and create, edit, and complete checklist items. | CF |
+| Campus Directions | Select campus locations and view directions between buildings. | YD |
 | Free Time | Identify available time slots based on the student's schedule. | TBD |
 
 ## Technologies
@@ -24,13 +25,17 @@ CHIP is a high-fidelity, semi-functional web prototype designed to help internat
 - Browser localStorage — shared and persistent prototype data where needed
 - Git and GitHub — version control and collaboration
 
-Note for our reference: No backend, external API, or database is required. Sample data may be used for functionality that would normally require external services.
+No backend, external API, or database is required. Sample data may be used for functionality that would normally require external services. CHIP will simulate an LLM-style assistant using JavaScript rules and shared prototype data; no real LLM or API key is required.
 
 ## Proposed Project Structure
 
 ```text
 chip/
-├── index.html              # Home page
+├── index.html              # Home page and chat interface
+├── chip.js                 # Assistant response logic
+├── onboarding/
+│   ├── index.html          # Student onboarding
+│   └── script.js           # Save student profile
 ├── styles.css              # Shared styles
 ├── shared.js               # Shared data and utilities
 ├── study-spaces/
@@ -53,7 +58,7 @@ chip/
 └── README.md
 ```
 
-Each team member is responsible for their assigned feature folder. Feature-specific CSS files are optional. All pages should use the shared styles and navigation to maintain a consistent design.
+FA owns the homepage, assistant, and onboarding, and coordinates shared navigation and styling. CF owns `schedule/` and YD owns `directions/`. Study Spaces and Free Time ownership is still to be confirmed. Each team member is responsible for their assigned feature files. Feature-specific CSS files are optional. All pages should use the shared styles and navigation to maintain a consistent design.
 
 ## Getting Started
 
@@ -84,10 +89,11 @@ Use a local server rather than opening HTML files directly so that shared browse
 
 Each team member should develop their feature on a separate Git branch:
 
-- `feature/study-spaces`
-- `feature/schedule`
-- `feature/directions`
-- `feature/free-time`
+- `feature/home-onboarding` (FA)
+- `feature/study-spaces` (TBD)
+- `feature/schedule` (CF)
+- `feature/directions` (YD)
+- `feature/free-time` (TBD)
 
 Before starting, update your local main branch and create your assigned feature branch:
 
@@ -118,7 +124,51 @@ Open a pull request on GitHub to merge your feature into `main`. Coordinate chan
 - Provide visible feedback when users perform actions.
 - Keep the prototype focused on the agreed target screen size; responsive design is not required.
 
+## CHIP Assistant and Onboarding
+
+### User flow
+
+1. On first visit, ask the student what name CHIP should use.
+2. Save the preferred name locally and open the homepage.
+3. Greet the student by name and display a chat input and four quick actions.
+4. Accept typed questions, show the student's message, and return a relevant simulated response.
+5. Offer links to the appropriate feature page when a task requires more interaction.
+6. Allow the student to update their name and retain it across navigation.
+
+### Supported questions
+
+| Example question | Expected behavior |
+| --- | --- |
+| What is my name? | Read the saved student profile. |
+| Where can I study? | Suggest a sample study space and link to Study Spaces. |
+| What is on my schedule? | Read saved schedule entries and link to Schedule. |
+| What do I need to do today? | Read pending checklist items. |
+| How do I get to the library? | Offer a predefined route or link to Directions. |
+| When am I free today? | Use schedule gaps or link to Free Time. |
+
+Use keyword matching and predefined responses for the prototype. For unsupported questions, explain what CHIP can help with instead of inventing an answer. Keep chat history visible during the session; sessionStorage may be used to retain it across page navigation. The assistant is simulated, not a general-purpose LLM.
+
 ## Shared Data and State
+
+### Proposed shared storage keys
+
+| Key | Data | Owner |
+| --- | --- | --- |
+| `chip.profile` | Object containing `name` | FA |
+| `campus.schedule` | Array of scheduled events | CF |
+| `chip.checklist` | Array of tasks with `id`, `title`, `completed`, and optional `date` | CF |
+| `chip.chat` | Session chat history (optional, sessionStorage) | FA |
+
+Example profile:
+
+```javascript
+localStorage.setItem("chip.profile", JSON.stringify({ name: "Alex" }));
+const profile = JSON.parse(localStorage.getItem("chip.profile") || "null");
+```
+
+Use `textContent` when displaying user-entered names and chat messages. Agree on shared keys and data formats before integrating features. Use sample data for independent development, and do not overwrite saved user input.
+
+### Schedule and free-time integration
 
 Use JavaScript for interactions and `localStorage` where data needs to persist across page navigation. The Schedule and Free Time features should agree on a common schedule format before development begins.
 
@@ -167,6 +217,15 @@ Each feature should:
 - [ ] Work without broken links or console errors.
 - [ ] Include a brief description of how to test the feature.
 
+## Integration and Demo Checks
+
+- [ ] Complete onboarding, navigate away, and return to a personalized greeting.
+- [ ] Ask CHIP a supported question and see a response and relevant feature link.
+- [ ] Add a schedule event or checklist item and verify it is still present after navigating away.
+- [ ] Verify CHIP reads the updated schedule and Free Time reflects schedule changes.
+- [ ] Navigate to all four features and back home without broken links.
+- [ ] Test unsupported questions and empty input.
+
 ## Proposed Timeline
 
 | Date | Milestone |
@@ -183,8 +242,8 @@ Each team member should document their contributions, the usability feedback add
 
 | Team member | Feature | Contributions / usability improvements |
 | --- | --- | --- |
-| TBD | Home Page | TBD |
+| FA | Home, CHIP Assistant & Onboarding | Personalized greeting, chat, quick actions, profile and shared navigation; usability improvements TBD |
 | TBD | Study Spaces | TBD |
-| TBD | Schedule & Checklist | TBD |
-| TBD | Campus Directions | TBD |
+| CF | Schedule & Checklist | TBD |
+| YD | Campus Directions | TBD |
 | TBD | Free Time | TBD |
