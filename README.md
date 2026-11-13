@@ -84,7 +84,7 @@ Then visit http://localhost:8000 in your browser. On Windows, use `py -m http.se
 
 Use a local server rather than opening HTML files directly so that shared browser storage behaves consistently across pages.
 
-## Collaboration Workflow
+## Division of Work
 
 Each team member should develop their feature on a separate Git branch:
 
