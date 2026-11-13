@@ -237,8 +237,6 @@ Each feature should:
 
 ## Team Contributions
 
-Each team member should document their contributions, the usability feedback addressed, and any known limitations of their feature.
-
 | Team member | Feature | Contributions / usability improvements |
 | --- | --- | --- |
 | FA | Home, CHIP Assistant & Onboarding | Personalized greeting, chat, quick actions, profile and shared navigation; usability improvements TBD |
