@@ -30,31 +30,40 @@ No backend, external API, or database is required. Sample data may be used for f
 
 ```text
 CHIP_main/
-├── index.html              # Home page and chat interface
-├── chip.js                 # Assistant response logic
+├── index.html              # Homepage and chat interface
+├── home.js                 # Homepage and assistant response logic
+├── home.css                # Homepage-specific styles
+├── styles.css              # Shared application styles
+├── shared.js               # Shared data and utility functions
+│
 ├── onboarding/
-│   ├── index.html          # Student onboarding
-│   └── script.js           # Save student profile
-├── styles.css              # Shared styles
-├── shared.js               # Shared data and utilities
+│   ├── index.html          # Student onboarding interface
+│   ├── onboarding.css      # Onboarding-specific styles
+│   └── script.js           # Save and update student profile
+│
 ├── study-spaces/
-│   ├── index.html
-│   ├── script.js
-│   └── styles.css          # Optional feature-specific styles
+│   ├── index.html          # Study space finder interface
+│   ├── script.js           # Study space functionality
+│   └── style.css           # Feature-specific styles
+│
 ├── schedule/
-│   ├── index.html
-│   ├── script.js
-│   └── styles.css
+│   ├── index.html          # Schedule and checklist interface
+│   ├── script.js           # Schedule and checklist functionality
+│   └── style.css           # Feature-specific styles
+│
 ├── directions/
-│   ├── index.html
-│   ├── script.js
-│   └── styles.css
+│   ├── index.html          # Campus directions interface
+│   ├── script.js           # Navigation functionality
+│   └── style.css           # Feature-specific styles
+│
 ├── free-time/
-│   ├── index.html
-│   ├── script.js
-│   └── styles.css
-├── assets/                 # Images, icons, and maps
-└── README.md
+│   ├── index.html          # Free time finder interface
+│   ├── script.js           # Free time functionality
+│   └── style.css           # Feature-specific styles
+│
+├── assets/                                         # Images, icons, and maps (as needed)
+├── README.md                                       # Project overview and setup instructions
+└── DEVELOPER_INTEGRATION_GUIDE.md                  # Technical integration documentation
 ```
 
 Note: All pages should use the shared styles and navigation to maintain a consistent design.
