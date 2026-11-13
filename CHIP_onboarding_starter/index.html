@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CHIP | Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="shared.js" defer></script>
-  <script src="home.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHIP | Home</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="home.css">
+<script src="shared.js" defer></script>
+<script src="home.js" defer></script>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="app-header">
-      <a class="brand" href="index.html">CHIP</a>
-      <a href="onboarding/index.html?edit=1">Edit profile</a>
-    </header>
-    <main class="page-content" id="home" hidden>
-      <h1 id="greeting"></h1>
-      <p class="muted">Your personal guide to campus life.</p>
-      <section class="card">
-        <h2>Welcome to CHIP</h2>
-        <p>Your profile is ready. The conversational assistant will be added here next.</p>
-      </section>
-    </main>
-  </div>
-</body>
-</html>
+<div class="app-shell">
+<header class="app-header">
+<a class="brand" href="index.html">CHIP</a>
+<a class="profile-link" href="onboarding/index.html?edit=1">Edit profile</a>
+</header>
+<main class="page-content" id="home" hidden>
+<section class="welcome">
+<div class="mascot" aria-hidden="true"><svg viewBox="0 0 100 100" width="88" height="88"><circle cx="50" cy="50" r="46" fill="#f2e0e3"/><path d="M50 29V14" stroke="#8c2030" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="13" r="4" fill="#8c2030"/><rect x="17" y="29" width="66" height="49" rx="18" fill="#8c2030"/><rect x="25" y="37" width="50" height="32" rx="12" fill="white"/><circle cx="39" cy="49" r="4" fill="#8c2030"/><circle cx="61" cy="49" r="4" fill="#8c2030"/><path d="M43 57Q50 64 57 57" fill="none" stroke="#8c2030" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+<h1 id="greeting"></h1><p class="muted">How can I help you today?</p>
+</section>
+<section class="chat-section" aria-label="Chat with CHIP">
+<div id="chat-log" role="log" aria-live="polite" aria-label="Conversation"></div>
+<form id="chat-form" class="chat-form">
+<label class="sr-only" for="question">Ask CHIP a question</label>
+<input id="question" placeholder="Ask CHIP anything..." maxlength="500" required autocomplete="off">
+<button class="btn btn-primary" type="submit" aria-label="Send message">↑</button>
+</form>
+<div class="chat-meta"><small class="muted">Prototype assistant · simulated responses</small><button id="clear-chat" type="button">Clear chat</button></div>
+</section>
+<section class="quick-actions"><h2>Quick actions</h2>
+<div class="feature-grid">
+<a class="card feature-card" href="study-spaces/index.html"><span aria-hidden="true">📚</span><strong>Study Spaces</strong><small>Find a place to focus</small></a>
+<a class="card feature-card" href="schedule/index.html"><span aria-hidden="true">📅</span><strong>My Schedule</strong><small>Plan your day</small></a>
+<a class="card feature-card" href="directions/index.html"><span aria-hidden="true">📍</span><strong>Directions</strong><small>Find your way</small></a>
+<a class="card feature-card" href="free-time/index.html"><span aria-hidden="true">🕒</span><strong>Free Time</strong><small>Explore your availability</small></a>
+</div></section>
+<section class="card overview"><h2>Your schedule</h2><p id="schedule-summary" class="muted"></p><a href="schedule/index.html">View schedule →</a></section>
+</main>
+<footer class="home-footer muted">Campus Host Intelligence Portal</footer>
+</div>
+</body></html>
