@@ -175,7 +175,3 @@ python3 -m http.server 8000
 Preview: http://localhost:8000
 
 All pages share browser storage when served from the same origin (scheme, host and port). A different port has separate storage. No backend or external AI service is required for the current prototype.
-
-## Integration status
-
-Onboarding, personalized homepage, shared styling and simulated chat are the existing foundation. The four feature templates are starting points; their functionality and final layouts are developed separately. Schedule/checklist schemas remain open for team coordination. This guide reflects the generated starter implementation and can evolve with the project.
