@@ -1,11 +1,4 @@
-// Campus Directions — walking directions between Stevens academic buildings.
-// Prototype only: building positions are approximate (simplified map), and
-// directions are generated from those positions. To adjust a building, edit
-// its x/y in BUILDINGS below (x: 0 = Hudson St side → 100 = river side,
-// y: 0 = 5th St side → 100 = north end of campus).
-// Saved locally: saved routes, recent routes, last selection.
 
-/* ---------- Data ---------- */
 const BUILDINGS = [
   { id: "eas",      name: "Edwin A. Stevens Hall",       short: "EAS",       x: 28, y: 10, note: "Home of DeBaun Auditorium" },
   { id: "carnegie", name: "Carnegie Laboratory",         short: "Carnegie",  x: 40, y: 15 },
