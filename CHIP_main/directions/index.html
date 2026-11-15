@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHIP | Directions</title>
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="style.css">
-<script src="../shared.js" defer></script>
-<script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Directions · CHIP</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body><div class="app-shell"><header class="app-header"><a class="brand" href="../index.html">CHIP</a><a href="../index.html">Back to home</a></header><main class="page-content"><h1>Directions</h1><!-- Feature content goes here --></main></div></body>
+<body class="dir-page">
+
+  <header class="dir-header">
+    <button class="dir-back" id="backBtn" aria-label="Back">‹</button>
+    <div>
+      <h1 id="headerTitle">Campus Directions</h1>
+      <p id="headerSub">Walk between Stevens buildings</p>
+    </div>
+  </header>
+
+  <main class="dir-main">
+
+    <!-- SCREEN 1: choose buildings -->
+    <section id="screen-start" class="screen active">
+      <div class="dir-card">
+        <div class="fromto-row">
+          <div class="fromto-dots"><span class="dot dot-start"></span><span class="fromto-line"></span><span class="dot dot-end"></span></div>
+          <div class="fromto-fields">
+            <label for="fromSelect" class="dir-label">From</label>
+            <select id="fromSelect" class="dir-input"></select>
+            <label for="toSelect" class="dir-label">To</label>
+            <select id="toSelect" class="dir-input"></select>
+          </div>
+          <button class="swap-btn" id="swapBtn" aria-label="Swap start and destination">⇅</button>
+        </div>
+        <label for="roomInput" class="dir-label">Room number <span class="muted">(optional)</span></label>
+        <input id="roomInput" class="dir-input" type="text" inputmode="numeric" placeholder="e.g. 204">
+        <button class="dir-btn block" id="goBtn">Get directions</button>
+        <p class="dir-error" id="formError" role="alert"></p>
+      </div>
+
+      <h2 class="dir-section">Saved routes</h2>
+      <div id="savedList"></div>
+
+      <h2 class="dir-section">Recent</h2>
+      <div id="recentList"></div>
+    </section>
+
+    <!-- SCREEN 2: route detail -->
+    <section id="screen-detail" class="screen">
+      <div class="dir-card summary" id="summary"></div>
+      <div class="dir-card map-card">
+        <svg id="map" viewBox="0 0 320 300" role="img" aria-label="Campus map with walking route"></svg>
+        <p class="map-caption">Simplified campus map · north is up</p>
+      </div>
+      <h2 class="dir-section">Step by step</h2>
+      <ol class="timeline" id="steps"></ol>
+      <div class="dir-actions">
+        <button class="dir-btn secondary" id="saveBtn">☆ Save route</button>
+        <button class="dir-btn" id="startBtn">Start walking</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: walking, one step at a time -->
+    <section id="screen-trip" class="screen">
+      <div class="trip-progress"><div class="trip-bar" id="tripBar"></div></div>
+      <p class="muted center" id="tripCount"></p>
+      <div class="dir-card trip-card">
+        <div class="trip-icon" id="tripIcon"></div>
+        <p class="trip-text" id="tripText"></p>
+        <p class="muted" id="tripMeta"></p>
+      </div>
+      <div class="dir-actions">
+        <button class="dir-btn secondary" id="prevBtn">Previous</button>
+        <button class="dir-btn" id="nextBtn">Next step</button>
+      </div>
+      <button class="dir-link" id="endBtn">End walk</button>
+    </section>
+
+    <!-- SCREEN 4: arrived -->
+    <section id="screen-arrived" class="screen">
+      <div class="dir-card center arrived">
+        <div class="arrived-icon">✓</div>
+        <h3 id="arrivedTitle"></h3>
+        <p class="muted" id="arrivedText"></p>
+        <a class="dir-btn block" href="../schedule/index.html">View my schedule</a>
+        <button class="dir-link" id="doneBtn">Back to directions</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="dir-toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
 </html>
