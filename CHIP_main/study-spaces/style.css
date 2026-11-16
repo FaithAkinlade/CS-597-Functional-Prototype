@@ -1,1 +1,419 @@
-/* Feature-specific styles go here. */
+/* =========================================
+   CHIP — STUDY SPACES
+   Feature-specific styles
+   Uses the shared CHIP design system
+========================================= */
+
+#browseScreen,
+#detailScreen,
+#reservationScreen,
+#confirmationScreen {
+    animation: studyFadeIn 0.2s ease;
+}
+
+@keyframes studyFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+
+.app-header>a:last-child {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* PAGE INTRO */
+
+.page-content>section>h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.page-content>section>p.muted:first-child {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* SEARCH */
+
+.study-search {
+    margin-top: 24px;
+}
+
+.study-search input {
+    border-radius: 12px;
+}
+
+.study-search input:focus {
+    border-color: var(--primary-color);
+    outline: 2px solid var(--accent-color);
+}
+
+/* SECTION HEADINGS */
+
+#browseScreen h2 {
+    font-size: 1.05rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.results-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 26px;
+}
+
+.results-heading h2 {
+    margin: 0 !important;
+}
+
+#resultCount {
+    font-size: 0.8rem;
+}
+
+/* FILTER BUTTONS */
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.filter-btn {
+    min-height: 42px;
+    padding: 9px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    background: white;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* STUDY SPACE RESULTS */
+
+.space-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.space-card {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--card-color);
+    color: var(--text-color);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.space-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.space-image {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 76px;
+    height: 76px;
+    border-radius: 12px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    overflow: hidden;
+}
+
+.space-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.space-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.space-info h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+}
+
+.space-info p {
+    margin: 0 0 5px;
+    color: var(--secondary-text);
+    font-size: 0.82rem;
+}
+
+.space-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-top: 7px;
+}
+
+.space-tag {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 30px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 0.72rem;
+    font-weight: 650;
+}
+
+.availability {
+    color: #267447;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.space-arrow {
+    flex: none;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+/* EMPTY SEARCH RESULTS */
+
+.empty-state {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin-bottom: 6px;
+}
+
+/* CAMPUS MAP ENTRY */
+
+.campus-map-entry {
+    margin-top: 28px;
+    background: var(--accent-color);
+    border-color: transparent;
+}
+
+.campus-map-entry h3 {
+    margin-bottom: 6px;
+}
+
+.campus-map-entry p {
+    font-size: 0.88rem;
+}
+
+.campus-map-entry .btn {
+    margin-top: 8px;
+}
+
+/* DETAIL SCREEN */
+
+#detailScreen {
+    padding-top: 4px;
+}
+
+#backToSpaces,
+#backToDetails {
+    margin-bottom: 22px;
+}
+
+.detail-image {
+    width: 100%;
+    height: 190px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 3rem;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-title {
+    font-size: 1.65rem;
+    margin-bottom: 6px;
+}
+
+.detail-description {
+    color: var(--secondary-text);
+    margin-bottom: 18px;
+}
+
+.detail-section {
+    margin-top: 22px;
+}
+
+.detail-section h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.detail-info {
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: white;
+}
+
+.detail-info span {
+    display: block;
+    color: var(--secondary-text);
+    font-size: 0.76rem;
+    margin-bottom: 4px;
+}
+
+.detail-info strong {
+    font-size: 0.9rem;
+}
+
+.amenity-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.amenity {
+    padding: 8px 12px;
+    border-radius: 30px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.detail-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+/* RESERVATION FORM */
+
+.reservation-card {
+    margin-top: 22px;
+}
+
+#reservationSpaceName {
+    margin-bottom: 22px;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+#reservationForm .field {
+    margin-bottom: 18px;
+}
+
+/* CONFIRMATION */
+
+.confirmation-card {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.confirmation-icon {
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #e3f3e8;
+    color: #267447;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.confirmation-card h1 {
+    font-size: 1.55rem;
+}
+
+#confirmationDetails {
+    padding: 16px;
+    margin: 22px 0;
+    border-radius: 12px;
+    background: var(--background-color);
+    text-align: left;
+}
+
+#confirmationDetails p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+#confirmationDetails p:last-child {
+    margin-bottom: 0;
+}
+
+.confirmation-card .btn {
+    margin-bottom: 10px;
+}
+
+.home-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+/* ACCESSIBILITY */
+
+.filter-btn:focus-visible,
+.space-card:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
