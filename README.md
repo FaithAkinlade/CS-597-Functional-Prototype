@@ -138,10 +138,9 @@ CHIP uses keyword matching and predefined responses for the prototype. For unsup
 
 ## Team Contributions
 
-| Team member | Feature | Contributions / usability improvements |
-| --- | --- | --- |
-| FA | Home, CHIP Assistant & Onboarding | Personalized greeting, chat, quick actions, profile and shared navigation; usability improvements TBD |
-| AN | Study Spaces | TBD |
-| CF | Schedule & Checklist | TBD |
-| YD | Campus Directions | TBD |
-| TBD | Free Time | TBD |
+| Team member | Contributions |
+| --- | --- |
+| FA | Home and Onboarding pages, initial styling and README |
+| AN | Finding study spaces feature |
+| CF | Schedule & Checklist feature |
+| YD | Campus Directions feature |
