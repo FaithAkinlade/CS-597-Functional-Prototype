@@ -1,13 +1,250 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHIP | Study Spaces</title>
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="style.css">
-<script src="../shared.js" defer></script>
-<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Study Spaces | CHIP</title>
+
+    <!-- CHIP shared design system -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Study Spaces styling -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Shared and feature JavaScript -->
+    <script src="../shared.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
-<body><div class="app-shell"><header class="app-header"><a class="brand" href="../index.html">CHIP</a><a href="../index.html">Back to home</a></header><main class="page-content"><h1>Study Spaces</h1><!-- Feature content goes here --></main></div></body>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <a class="brand" href="../index.html">CHIP</a>
+            <a href="../index.html">Back to home</a>
+        </header>
+
+        <main class="page-content">
+
+            <!-- BROWSE SCREEN -->
+            <section id="browseScreen">
+
+                <p class="muted">CAMPUS LIFE / STUDY SPACES</p>
+
+                <h1>Find your study spot.</h1>
+
+                <p class="muted">
+                    Discover quiet places on campus where you can
+                    focus, study and get things done.
+                </p>
+
+                <!-- SEARCH -->
+                <div class="field study-search">
+                    <label for="searchInput">Find a study space</label>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search by building or room..."
+                    >
+                </div>
+
+                <!-- FILTERS -->
+                <h2>Explore spaces</h2>
+
+                <div class="filter-list" id="filterList">
+                    <button class="filter-btn active"
+                            data-filter="all"
+                            type="button">
+                        All spaces
+                    </button>
+
+                    <button class="filter-btn"
+                            data-filter="quiet"
+                            type="button">
+                        Quiet study
+                    </button>
+
+                    <button class="filter-btn"
+                            data-filter="group"
+                            type="button">
+                        Group study
+                    </button>
+                </div>
+
+                <!-- SPACE COUNT AND RESULTS -->
+                <div class="results-heading">
+                    <h2>Available spaces</h2>
+                    <span id="resultCount" class="muted"></span>
+                </div>
+
+                <div id="spaceList" class="space-list">
+                    <!-- Study spaces will be displayed here -->
+                </div>
+
+                <div id="emptyState" class="card empty-state" hidden>
+                    <h3>No spaces found</h3>
+                    <p class="muted">
+                        Try another search or select a different filter.
+                    </p>
+                </div>
+
+                <!-- CAMPUS MAP ENTRY -->
+                <section class="campus-map-entry card">
+                    <div>
+                        <h3>New to campus?</h3>
+                        <p class="muted">
+                            Explore campus buildings and find your way
+                            around Stevens.
+                        </p>
+                    </div>
+
+                    <a class="btn btn-secondary btn-block"
+                       href="../directions/index.html">
+                        View campus directions
+                    </a>
+                </section>
+
+            </section>
+
+
+            <!-- STUDY SPACE DETAILS SCREEN -->
+            <section id="detailScreen" hidden>
+
+                <button class="btn btn-secondary"
+                        id="backToSpaces"
+                        type="button">
+                    ← Back to spaces
+                </button>
+
+                <div id="spaceDetails">
+                    <!-- Selected study space details appear here -->
+                </div>
+
+                <div class="detail-actions">
+                    <button class="btn btn-primary btn-block"
+                            id="reserveBtn"
+                            type="button">
+                        Reserve this space
+                    </button>
+
+                    <a class="btn btn-secondary btn-block"
+                       id="directionsBtn"
+                       href="../directions/index.html">
+                        Get directions
+                    </a>
+                </div>
+
+            </section>
+
+
+            <!-- RESERVATION SCREEN -->
+            <section id="reservationScreen" hidden>
+
+                <button class="btn btn-secondary"
+                        id="backToDetails"
+                        type="button">
+                    ← Back to details
+                </button>
+
+                <h1>Reserve your space</h1>
+
+                <p class="muted">
+                    Choose a date and time for your study session.
+                </p>
+
+                <div class="card reservation-card">
+
+                    <div id="reservationSpaceName"></div>
+
+                    <form id="reservationForm">
+
+                        <div class="field">
+                            <label for="reservationDate">Date</label>
+                            <input
+                                type="date"
+                                id="reservationDate"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="startTime">Start time</label>
+                            <select id="startTime" required>
+                                <option value="">Choose a start time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="duration">Duration</label>
+                            <select id="duration" required>
+                                <option value="1">1 hour</option>
+                                <option value="2">2 hours</option>
+                                <option value="3">3 hours</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary btn-block"
+                                type="submit">
+                            Confirm reservation
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESERVATION CONFIRMATION -->
+            <section id="confirmationScreen" hidden>
+
+                <div class="card confirmation-card">
+
+                    <div class="confirmation-icon">✓</div>
+
+                    <h1>Reservation confirmed!</h1>
+
+                    <p class="muted">
+                        Your study session has been added to your
+                        CHIP reservations.
+                    </p>
+
+                    <div id="confirmationDetails"></div>
+
+                    <a class="btn btn-primary btn-block"
+                       id="confirmationDirections"
+                       href="../directions/index.html">
+                        Get directions
+                    </a>
+
+                    <button class="btn btn-secondary btn-block"
+                            id="findAnotherBtn"
+                            type="button">
+                        Find another space
+                    </button>
+
+                    <a class="home-link" href="../index.html">
+                        Return to CHIP home
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
 </html>
