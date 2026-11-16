@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHIP | Free Time</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="../shared.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <a class="brand" href="../index.html">CHIP</a>
+            <a href="../index.html">Back to home</a>
+        </header>
+
+        <main class="page-content">
+            <section class="intro">
+                <span class="eyebrow">PLAN YOUR STUDY TIME</span>
+                <h1>Find your free time</h1>
+                <p class="muted">
+                    See when you're available and make time for what matters.
+                </p>
+            </section>
+
+            <section class="card controls-card">
+                <h2>Check availability</h2>
+
+                <div class="view-toggle" role="group" aria-label="Schedule view">
+                    <button class="toggle-btn active" id="dayView" type="button">
+                        Day
+                    </button>
+                    <button class="toggle-btn" id="weekView" type="button">
+                        Week
+                    </button>
+                </div>
+
+                <div class="field">
+                    <label for="selectedDate">Choose a date</label>
+                    <input type="date" id="selectedDate">
+                </div>
+
+                <p class="muted small">
+                    Available time is calculated from your saved schedule.
+                </p>
+            </section>
+
+            <section class="availability-section">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="availabilityTitle">Your available time</h2>
+                        <p class="muted" id="availabilitySubtitle"></p>
+                    </div>
+                    <span class="availability-icon">🕒</span>
+                </div>
+
+                <div id="availabilityList" class="availability-list"></div>
+
+                <div id="emptyState" class="card empty-state" hidden>
+                    <span>📅</span>
+                    <h3>No free time found</h3>
+                    <p class="muted">
+                        There are no available study slots in this period.
+                        Try another date or check your schedule.
+                    </p>
+                    <a class="btn btn-secondary btn-block" href="../schedule/index.html">
+                        View my schedule
+                    </a>
+                </div>
+            </section>
+
+            <section class="card booking-card" id="bookingCard" hidden>
+                <h2>Save study time</h2>
+                <p class="muted" id="selectedSlotText"></p>
+
+                <div class="field">
+                    <label for="studyDuration">How long do you want to study?</label>
+                    <select id="studyDuration">
+                        <option value="30">30 minutes</option>
+                        <option value="60" selected>1 hour</option>
+                        <option value="90">1 hour 30 minutes</option>
+                        <option value="120">2 hours</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="studyTitle">Study session name</label>
+                    <input id="studyTitle" type="text" maxlength="60" value="Study session"
+                        placeholder="e.g. Complete CS assignment">
+                </div>
+
+                <p class="error" id="bookingError" role="alert"></p>
+
+                <button class="btn btn-primary btn-block" id="saveStudyBtn">
+                    Add to my schedule
+                </button>
+                <button class="btn btn-secondary btn-block" id="cancelBookingBtn">
+                    Cancel
+                </button>
+            </section>
+
+            <section class="card success-card" id="successCard" hidden>
+                <div class="success-icon">✓</div>
+                <h2>Study time added!</h2>
+                <p id="successMessage" class="muted"></p>
+                <a class="btn btn-primary btn-block" href="../schedule/index.html">
+                    View my schedule
+                </a>
+                <button class="text-button" id="backToAvailability">
+                    Find another time
+                </button>
+            </section>
+
+            <p class="data-note">
+                Availability is based on the schedule saved in this prototype.
+            </p>
+        </main>
+    </div>
+</body>
+
+</html>
