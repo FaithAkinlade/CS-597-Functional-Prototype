@@ -140,7 +140,7 @@ CHIP uses keyword matching and predefined responses for the prototype. For unsup
 
 | Team member | Contributions |
 | --- | --- |
-| Faith Akinlade | Home and Onboarding pages, initial styling, README, DEV integration guide and repo setup |
+| Faith Akinlade | Home and Onboarding pages, initial styling, README, DEV integration guide, repo setup and Github Pages Deployment |
 | Akshar Namala | Finding study spaces and free time features |
 | Christopher Field | Schedule & Checklist feature |
 | Yifei Du | Campus Directions feature |
